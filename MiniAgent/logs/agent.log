@@ -1,0 +1,82 @@
+# Mini Agent Runtime Trace Log
+# 记录格式: [session_id] TAG: content
+[2026-09-30 23:39:10,025] [session_72f414d7] SESSION: session_72f414d7
+[2026-09-30 23:39:10,025] [session_72f414d7] USER: 你好
+[2026-09-30 23:39:10,026] [session_72f414d7] LLM: {"type": "answer", "content": "你好，我是 Mini Agent。我可以计算、模拟搜索和管理待办。"}
+[2026-09-30 23:39:10,033] [session_72f414d7] FINAL: 你好，我是 Mini Agent。我可以计算、模拟搜索和管理待办。
+[2026-09-30 23:39:10,033] [session_87c4e260] SESSION: session_87c4e260
+[2026-09-30 23:39:10,033] [session_87c4e260] USER: 计算100+200
+[2026-09-30 23:39:10,034] [session_87c4e260] LLM: {"type": "tool_call", "tool": "calculator", "arguments": {"expression": "100+200"}}
+[2026-09-30 23:39:10,034] [session_87c4e260] TOOL: calculator
+[2026-09-30 23:39:10,034] [session_87c4e260] RESULT: {"expression": "100+200", "result": 300}
+[2026-09-30 23:39:10,035] [session_87c4e260] LLM: {"type": "answer", "content": "计算结果为 300"}
+[2026-09-30 23:39:10,035] [session_87c4e260] FINAL: 计算结果为 300
+[2026-09-30 23:39:10,036] [session_407a28aa] SESSION: session_407a28aa
+[2026-09-30 23:39:10,036] [session_407a28aa] USER: 查询东京天气
+[2026-09-30 23:39:10,036] [session_407a28aa] LLM: {"type": "tool_call", "tool": "search", "arguments": {"query": "查询东京天气"}}
+[2026-09-30 23:39:10,036] [session_407a28aa] TOOL: search
+[2026-09-30 23:39:10,037] [session_407a28aa] RESULT: {"query": "查询东京天气", "result": "东京今天25℃, 晴"}
+[2026-09-30 23:39:10,037] [session_407a28aa] LLM: {"type": "answer", "content": "东京今天25℃, 晴"}
+[2026-09-30 23:39:10,037] [session_407a28aa] FINAL: 东京今天25℃, 晴
+[2026-09-30 23:48:15,129] [session_68038613] SESSION: session_68038613
+[2026-09-30 23:48:15,129] [session_68038613] USER: 你好
+[2026-09-30 23:48:18,875] [session_68038613] ERROR: LLM调用失败: Error code: 400 - {'error': {'message': 'The supported API model names are deepseek-flash, deepseek-v4-pro, but you passed deepseek-v4. (request_id: 4452a1fa-770b-4655-8d30-8ecfa15e3e2c)', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+[2026-09-30 23:48:18,876] [session_68038613] FINAL: 抱歉，LLM 调用失败：Error code: 400 - {'error': {'message': 'The supported API model names are deepseek-flash, deepseek-v4-pro, but you passed deepseek-v4. (request_id: 4452a1fa-770b-4655-8d30-8ecfa15e3e2c)', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+[2026-09-30 23:48:44,013] [session_f7e60b25] SESSION: session_f7e60b25
+[2026-09-30 23:48:44,013] [session_f7e60b25] USER: 你好
+[2026-09-30 23:48:47,215] [session_f7e60b25] LLM: {"type": "answer", "content": "你好！我是一个具备自主决策能力的 Agent，可以帮你进行计算、搜索信息、管理待办任务等。有什么我可以帮你的吗？"}
+[2026-09-30 23:48:47,216] [session_f7e60b25] FINAL: 你好！我是一个具备自主决策能力的 Agent，可以帮你进行计算、搜索信息、管理待办任务等。有什么我可以帮你的吗？
+[2026-09-30 23:49:21,044] [session_7081a9cb] SESSION: session_7081a9cb
+[2026-09-30 23:49:21,044] [session_7081a9cb] USER: list
+[2026-09-30 23:49:24,158] [session_7081a9cb] LLM: {"type": "tool_call", "tool": "todo", "arguments": {"action": "list"}}
+[2026-09-30 23:49:24,158] [session_7081a9cb] TOOL: todo
+[2026-09-30 23:49:24,158] [session_7081a9cb] RESULT: {"todos": []}
+[2026-09-30 23:49:25,273] [session_7081a9cb] LLM: {"type": "answer", "content": "当前待办列表为空，没有需要处理的任务。"}
+[2026-09-30 23:49:25,273] [session_7081a9cb] FINAL: 当前待办列表为空，没有需要处理的任务。
+[2026-09-30 23:49:30,765] [session_cfba24b7] SESSION: session_cfba24b7
+[2026-09-30 23:49:30,765] [session_cfba24b7] USER: add
+[2026-09-30 23:49:34,278] [session_cfba24b7] LLM: {"type":"answer","content":"请告诉我需要添加的待办内容。"}
+[2026-09-30 23:49:34,278] [session_cfba24b7] FINAL: 请告诉我需要添加的待办内容。
+[2026-09-30 23:50:20,954] [session_78b0e764] SESSION: session_78b0e764
+[2026-09-30 23:50:20,955] [session_78b0e764] USER: 计算20 * 4566
+[2026-09-30 23:50:23,884] [session_78b0e764] LLM: {"type": "tool_call", "tool": "calculator", "arguments": {"expression": "20 * 4566"}}
+[2026-09-30 23:50:23,889] [session_78b0e764] TOOL: calculator
+[2026-09-30 23:50:23,889] [session_78b0e764] RESULT: {"expression": "20 * 4566", "result": 91320}
+[2026-09-30 23:50:25,133] [session_78b0e764] LLM: {"type": "answer", "content": "20 * 4566 = 91320"}
+[2026-09-30 23:50:25,134] [session_78b0e764] FINAL: 20 * 4566 = 91320
+[2026-09-30 23:50:32,459] [session_98e927ef] SESSION: session_98e927ef
+[2026-09-30 23:50:32,459] [session_98e927ef] USER: list
+[2026-09-30 23:50:34,350] [session_98e927ef] LLM: {"type": "tool_call", "tool": "todo", "arguments": {"action": "list"}}
+[2026-09-30 23:50:34,350] [session_98e927ef] TOOL: todo
+[2026-09-30 23:50:34,350] [session_98e927ef] RESULT: {"todos": []}
+[2026-09-30 23:50:35,837] [session_98e927ef] LLM: {"type": "answer", "content": "当前待办列表为空，没有任何任务。"}
+[2026-09-30 23:50:35,837] [session_98e927ef] FINAL: 当前待办列表为空，没有任何任务。
+[2026-09-30 23:50:41,293] [session_1ab8ccd8] SESSION: session_1ab8ccd8
+[2026-09-30 23:50:41,294] [session_1ab8ccd8] USER: add
+[2026-09-30 23:50:44,955] [session_1ab8ccd8] LLM: {"type": "answer", "content": "请告诉我要添加的待办任务内容，例如：'明天买牛奶'。"}
+[2026-09-30 23:50:44,956] [session_1ab8ccd8] FINAL: 请告诉我要添加的待办任务内容，例如：'明天买牛奶'。
+[2026-09-30 23:50:55,720] [session_26ef7215] SESSION: session_26ef7215
+[2026-09-30 23:50:55,721] [session_26ef7215] USER: 明天买可乐
+[2026-09-30 23:50:58,570] [session_26ef7215] LLM: {"type": "tool_call", "tool": "todo", "arguments": {"action": "add", "task": "明天买可乐"}}
+[2026-09-30 23:50:58,570] [session_26ef7215] TOOL: todo
+[2026-09-30 23:50:58,571] [session_26ef7215] RESULT: {"result": "已添加任务: 明天买可乐", "todos": ["明天买可乐"]}
+[2026-09-30 23:51:00,243] [session_26ef7215] LLM: {"type": "answer", "content": "已帮你添加待办：明天买可乐。别忘了哦！"}
+[2026-09-30 23:51:00,244] [session_26ef7215] FINAL: 已帮你添加待办：明天买可乐。别忘了哦！
+[2026-09-30 23:51:16,369] [session_fe7c1998] SESSION: session_fe7c1998
+[2026-09-30 23:51:16,370] [session_fe7c1998] USER: 明天写作业
+[2026-09-30 23:51:20,140] [session_fe7c1998] LLM: {"type": "tool_call", "tool": "todo", "arguments": {"action": "add", "task": "明天写作业"}}
+[2026-09-30 23:51:20,141] [session_fe7c1998] TOOL: todo
+[2026-09-30 23:51:20,141] [session_fe7c1998] RESULT: {"result": "已添加任务: 明天写作业", "todos": ["明天写作业"]}
+[2026-09-30 23:51:22,179] [session_fe7c1998] LLM: {"type": "answer", "content": "已帮你把「明天写作业」加入待办清单。需要查看全部待办或再添加其他任务，随时告诉我。"}
+[2026-09-30 23:51:22,180] [session_fe7c1998] FINAL: 已帮你把「明天写作业」加入待办清单。需要查看全部待办或再添加其他任务，随时告诉我。
+[2026-09-30 23:51:39,827] [session_bc7c08d8] SESSION: session_bc7c08d8
+[2026-09-30 23:51:39,828] [session_bc7c08d8] USER: 我明天有什么事要做吗
+[2026-09-30 23:51:45,420] [session_bc7c08d8] LLM: {"type": "tool_call", "tool": "todo", "arguments": {"action": "list"}}
+[2026-09-30 23:51:45,421] [session_bc7c08d8] TOOL: todo
+[2026-09-30 23:51:45,421] [session_bc7c08d8] RESULT: {"todos": []}
+[2026-09-30 23:51:46,741] [session_bc7c08d8] LLM: {"type": "answer", "content": "你的待办列表目前是空的，明天没有已记录的任务要做。如果需要，我可以帮你添加待办事项。"}
+[2026-09-30 23:51:46,741] [session_bc7c08d8] FINAL: 你的待办列表目前是空的，明天没有已记录的任务要做。如果需要，我可以帮你添加待办事项。
+[2026-10-01 12:19:12,349] [session_447ac58b] SESSION: session_447ac58b
+[2026-10-01 12:19:12,349] [session_447ac58b] USER: 我明天打算吃席
+[2026-10-01 12:19:12,924] [session_447ac58b] ERROR: LLM调用失败: Error code: 400 - {'error': {'message': 'The supported API model names are deepseek-flash, deepseek-v4-pro, but you passed gpt-4o-mini. (request_id: 5f121519-e54b-4dd3-9336-237e5ca34680)', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+[2026-10-01 12:19:12,924] [session_447ac58b] FINAL: 抱歉，LLM 调用失败：Error code: 400 - {'error': {'message': 'The supported API model names are deepseek-flash, deepseek-v4-pro, but you passed gpt-4o-mini. (request_id: 5f121519-e54b-4dd3-9336-237e5ca34680)', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}

@@ -1,0 +1,10 @@
+# 核心依赖
+openai>=1.0
+pydantic>=2.0
+
+# 测试
+pytest>=7.0
+
+# 可选：HTTP 服务
+# fastapi>=0.100
+# uvicorn>=0.20

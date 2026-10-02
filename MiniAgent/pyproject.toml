@@ -1,0 +1,17 @@
+[project]
+name = "mini-agent"
+version = "0.1.0"
+description = "Mini Agent Runtime - 从零实现的最小可用 Agent"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.0",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+http = ["fastapi>=0.100", "uvicorn>=0.20"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
